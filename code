@@ -1,0 +1,33 @@
+from turtle import Turtle
+
+
+def rectangle_area(height, base):
+    return height * base
+
+#draws a rectangle
+
+def draw_rectangle(r_name, col, height = 0, base = 0 , x=0, y=0):
+    r_name.penup()
+    r_name.goto(x, y)
+    r_name.color(col)
+    r_name.pendown()
+    r_name.forward(base)
+    r_name.left(90)
+    r_name.forward(height)
+    r_name.left(90)
+    r_name.forward(base)
+    r_name.left(90)
+    r_name.forward(height)
+    
+    r_name.penup()
+    r_name.goto(x,y)
+    r_name.pendown()
+    r_name.color("black")
+    r_name.write("Rectangle with base: " + str(base) + " and height : " + str(height), align="center")
+    
+rectangle_of_life = Turtle()
+red_rectangle = Turtle()
+draw_rectangle(rectangle_of_life, "blue", 100, 200, -5, 0)
+draw_rectangle(red_rectangle, "red", 50, 70, 20, 40)
+draw_rectangle(red_rectangle, "orange", 100, 150, 10, 30)
+draw_rectangle(red_rectangle, "green", 45, 60, 190, 60)
